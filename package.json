@@ -1,0 +1,52 @@
+{
+  "name": "bikerc-backend",
+  "version": "1.0.0",
+  "description": "Simple Express.js backend for BikeRC job storage",
+  "main": "dist/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "serve": "firebase emulators:start --only functions",
+    "deploy": "firebase deploy --only functions",
+    "test-bucket": "tsx src/scripts/testGoogleBucketUpload.ts",
+    "upload-test-files": "tsx src/scripts/uploadTestFiles.ts",
+    "cleanup-test-files": "tsx src/scripts/cleanupTestFiles.ts",
+    "test-end-to-end": "tsx src/scripts/testEndToEndFlow.ts",
+    "test-real-analysis": "tsx src/scripts/testRealAnalysisFlow.ts",
+    "test-auto-processing": "tsx src/scripts/testAutoJobProcessing.ts",
+    "test-aggressive-polling": "tsx src/scripts/testAggressivePolling.ts",
+    "create-index": "tsx src/scripts/createFirestoreIndex.ts",
+    "test-5min-filter": "tsx src/scripts/test5MinuteFilter.ts",
+    "test-stop-polling-404": "tsx src/scripts/testStopPollingOn404.ts",
+    "test-5sec-delay": "tsx src/scripts/test5SecondDelay.ts",
+    "test-download-urls": "tsx src/scripts/testDownloadUrls.ts",
+    "test-wait-details": "tsx src/scripts/test5SecondWaitAndDetails.ts",
+    "test-bucket-upload": "tsx src/scripts/testBucketUpload.ts",
+    "test-real-job": "tsx src/scripts/testRealJob.ts",
+    "test-gsutil": "tsx src/scripts/testGsutilUpload.ts"
+  },
+  "dependencies": {
+    "@types/form-data": "^2.2.1",
+    "axios": "^1.6.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "firebase-admin": "^12.0.0",
+    "form-data": "^4.0.4",
+    "fs-extra": "^11.2.0",
+    "multer": "^1.4.5-lts.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/fs-extra": "^11.0.4",
+    "@types/multer": "^1.4.11",
+    "@types/node": "^20.10.5",
+    "firebase-tools": "^13.0.0",
+    "tsx": "^4.6.2",
+    "typescript": "^5.3.3"
+  }
+}
